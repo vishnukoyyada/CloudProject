@@ -1,0 +1,13 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 30000
+    hostPort: 30000  # Grafana
+  - containerPort: 31000
+    hostPort: 31000  # Loki
+  - containerPort: 30601
+    hostPort: 5601   # Kibana
+  - containerPort: 9200
+    hostPort: 9200   # Elasticsearch
